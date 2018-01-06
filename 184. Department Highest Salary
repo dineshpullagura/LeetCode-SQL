@@ -1,0 +1,6 @@
+select D.name Department, E.Name Employee, E.Salary
+from Employee E inner join
+Department D ON E.DepartmentId=D.ID
+where 0 = ( select count(0) from Employee E1
+          where E1.DepartmentId=E.DepartmentId
+          and E1.Salary>E.Salary)
