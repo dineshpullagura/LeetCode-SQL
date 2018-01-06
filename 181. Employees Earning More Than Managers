@@ -1,0 +1,5 @@
+select E1.Name Employee
+from Employee E1 
+inner join Employee E2
+where E2.ID=E1.ManagerID
+and E1.Salary>E2.Salary
