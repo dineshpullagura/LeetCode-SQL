@@ -1,0 +1,3 @@
+select Score,(select count(distinct S1.Score) from Scores S1 where S1.Score>=S.Score) Rank
+from Scores S
+order by Score desc 
