@@ -1,0 +1,4 @@
+select MAX(Salary) SecondHighestSalary
+from Employee E
+where 1=(select count(0) from Employee E1
+        where E1.salary>E.Salary)
