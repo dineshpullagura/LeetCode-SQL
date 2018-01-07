@@ -1,0 +1,4 @@
+select S1.Id id, Coalesce(S2.Student,S1.Student) student
+from seat S1 
+left join Seat S2 ON (S1.ID+1)^1-1=S2.ID
+order by S1.id
