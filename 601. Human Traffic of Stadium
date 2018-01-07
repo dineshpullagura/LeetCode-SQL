@@ -1,0 +1,9 @@
+select distinct S4.*
+from 
+(select S1.Id
+from Stadium S1
+INNER JOIN Stadium S2 ON S2.Id-S1.ID between 1 and 2 
+and S1.People>=100 and S2.People>=100
+group by S1.ID
+having count(0)=2) S3 
+inner join Stadium S4 ON S4.Id-S3.Id between 0 and 2
